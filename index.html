@@ -12,18 +12,21 @@
         box-sizing: border-box;
       }
 
-      .desktop {
-        --desktop-navbar-visibility: hidden;
-        visibility: var(--desktop-navbar-visibility);
+      header .desktop {
+        --desktop-navbar-visibility: none;
+        display: var(--desktop-navbar-visibility);
+      }
+
+      header .mobile {
+        --mobile-navbar-visibility: ;
+        display: var(--mobile-navbar-visibility);
+      }
+
+      .nav-bar {
         display: flex;
         align-items: center;
         height: 64px;
         background-color: orange;
-      }
-
-      .mobile {
-        --mobile-navbar-visibility: visible;
-        visibility: var(--mobile-navbar-visibility);
       }
 
       .logo {
@@ -91,31 +94,51 @@
 
       /* SECTION 3 */
       .sec3-info-container {
-          background-color: beige;
-          margin-bottom: 64px;
+        background-color: beige;
+        margin-bottom: 64px;
       }
 
-      .info-orientation img {
-          padding: 16px;
-          width: 100%;
+      .info img {
+        padding: 16px;
+        width: 100%;
       }
 
-      .info-orientation a {
+      .info a {
         text-decoration: none;
-        color: blue;
+        color: #8fc9f9;
         margin-left: 32px;
       }
 
-      .info-orientation p {
+      .info p {
         margin: 8px 32px;
       }
 
-      .info-orientation h3 {
+      .info h4 {
         margin: 8px 32px;
- 
+        font-size: 1.25rem;
+        font-weight: bold;
       }
 
-      /* For Desktop */
+      .info .desktop {
+        --desktop-info-img-visibility: none;
+        display: var(--desktop-info-img-visibility);
+      }
+
+      .info .mobile {
+        --mobile-info-img-visibility: ;
+        display: var(--mobile-info-img-visibility);
+      }
+
+      /* Media Responsive for Desktop */
+      @media (min-width: 895px) {
+        .info .desktop {
+          --desktop-info-img-visibility: ;
+        }
+        .info .mobile {
+          --mobile-info-img-visibility: none;
+        }
+      }
+
       @media (min-width: 770px) {
         .sec2-banner-container {
           flex-direction: row;
@@ -129,16 +152,16 @@
         }
 
         .banner-text {
-            width: 40%;
+          width: 40%;
         }
       }
 
       @media (min-width: 550px) {
-        .desktop {
-          --desktop-navbar-visibility: visible;
+        header .desktop {
+          --desktop-navbar-visibility: ;
         }
-        .mobile {
-          --mobile-navbar-visibility: hidden;
+        header .mobile {
+          --mobile-navbar-visibility: none;
         }
       }
     </style>
@@ -146,15 +169,17 @@
   <body>
     <header>
       <div class="desktop">
-        <div class="logo">
-          <img src="capstone_colmar_assets/images/ic-logo.svg" />
-          <span><strong>COLMAR</strong>ACADEMY</span>
+        <div class="nav-bar">
+          <div class="logo">
+            <img src="capstone_colmar_assets/images/ic-logo.svg" />
+            <span><strong>COLMAR</strong>ACADEMY</span>
+          </div>
+          <ul class="right-menu">
+            <li><a href="#">On campus</a></li>
+            <li><a href="#">Online</a></li>
+            <li><a href="#">Sign in</a></li>
+          </ul>
         </div>
-        <ul class="right-menu">
-          <li><a href="#">On campus</a></li>
-          <li><a href="#">Online</a></li>
-          <li><a href="#">Sign in</a></li>
-        </ul>
       </div>
       <div class="mobile"></div>
     </header>
@@ -166,5 +191,52 @@
         <a href="#" class="button">Start Here</a>
       </div>
     </div>
-  </body>
+    <div class="sec3-info-container">
+      <div class="info">
+        <img
+          class="mobile"
+          src="capstone_colmar_assets/images/information-orientation-mobile.jpg"
+          alt="info orientation"
+        />
+        <img
+          class="desktop"
+          src="capstone_colmar_assets/images/information-orientation.jpg"
+          alt="info orientation"
+        />
+        <h4>Orientation date</h4>
+        <p>Tue 10/11 % Wed 10/12: 8am-3pm</p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="info">
+        <img
+          class="mobile"
+          src="capstone_colmar_assets/images/information-campus-mobile.jpg"
+          alt="info campus"
+        />
+        <img
+          class="desktop"
+          src="capstone_colmar_assets/images/information-campus.jpg"
+          alt="info campus"
+        />
+        <h4>Our Campus</h4>
+        <p>Find which campus is close by you</p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="info">
+        <img
+          class="mobile"
+          src="capstone_colmar_assets/images/information-guest-lecture-mobile.jpg"
+          alt="info campus"
+        />
+        <img
+          class="desktop"
+          src="capstone_colmar_assets/images/information-guest-lecture.jpg"
+          alt="info campus"
+        />
+        <h4>Special guest lecture</h4>
+        <p>Join a keynote with Oliver Sack about music in medical treatment</p>
+        <a href="#">Read more</a>
+      </div>
+    </body>
+    </div>
 </html>
