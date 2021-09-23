@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colmar Academy</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .desktop {
+        --desktop-navbar-visibility: hidden;
+        visibility: var(--desktop-navbar-visibility);
+        display: flex;
+        align-items: center;
+        height: 64px;
+        background-color: orange;
+      }
+
+      .mobile {
+        --mobile-navbar-visibility: visible;
+        visibility: var(--mobile-navbar-visibility);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        margin: 24px;
+        height: 32px;
+        /* flex-grow: 1; */
+      }
+
+      .right-menu {
+        /* margin-right: 24px; */
+        list-style: none;
+        position: absolute;
+        right: 24px;
+        float: right;
+      }
+
+      .right-menu li {
+        display: inline-block;
+        line-height: 64px;
+        margin-right: 16px;
+        text-decoration: none;
+      }
+
+      .right-menu li a {
+        text-decoration: none;
+        color: black;
+      }
+
+      /* SECTION 2 */
+      .sec2-banner-container {
+        background-color: #dbdbdb;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* .banner-img {
+        width: 100%;
+      } */
+
+      .banner-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: greenyellow;
+        width: 100%;
+        padding: 2rem 1rem;
+      }
+
+      .banner-text h1 {
+        margin-bottom: 2rem;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+
+      .banner-text a {
+        padding: 8px 0;
+        background-color: #9b9b9b;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        margin-top: 1.5rem;
+      }
+
+      /* SECTION 3 */
+      .sec3-info-container {
+          background-color: beige;
+          margin-bottom: 64px;
+      }
+
+      .info-orientation img {
+          padding: 16px;
+          width: 100%;
+      }
+
+      .info-orientation a {
+        text-decoration: none;
+        color: blue;
+        margin-left: 32px;
+      }
+
+      .info-orientation p {
+        margin: 8px 32px;
+      }
+
+      .info-orientation h3 {
+        margin: 8px 32px;
+ 
+      }
+
+      /* For Desktop */
+      @media (min-width: 770px) {
+        .sec2-banner-container {
+          flex-direction: row;
+          padding: 32px 24px;
+        }
+
+        .banner-img {
+          width: 60%;
+          margin-right: 24px;
+          /* margin: 32px 24px; */
+        }
+
+        .banner-text {
+            width: 40%;
+        }
+      }
+
+      @media (min-width: 550px) {
+        .desktop {
+          --desktop-navbar-visibility: visible;
+        }
+        .mobile {
+          --mobile-navbar-visibility: hidden;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="desktop">
+        <div class="logo">
+          <img src="capstone_colmar_assets/images/ic-logo.svg" />
+          <span><strong>COLMAR</strong>ACADEMY</span>
+        </div>
+        <ul class="right-menu">
+          <li><a href="#">On campus</a></li>
+          <li><a href="#">Online</a></li>
+          <li><a href="#">Sign in</a></li>
+        </ul>
+      </div>
+      <div class="mobile"></div>
+    </header>
+    <div class="sec2-banner-container">
+      <img class="banner-img" src="capstone_colmar_assets/images/banner.jpg" />
+      <div class="banner-text">
+        <h1>Learn something new everyday</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <a href="#" class="button">Start Here</a>
+      </div>
+    </div>
+  </body>
+</html>
