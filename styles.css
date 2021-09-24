@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+:root {
+    --color-gray-theme: #dbdbdb;
+    --color-darkgray-theme: #4b4b4b;
+    --color-border: #f5f5f5;
+    --color-blue-theme: #68afe9;
+}
+
+p {
+    line-height: 1.4rem;
+}
+
 header .desktop {
   --desktop-navbar-visibility: none;
   display: var(--desktop-navbar-visibility);
@@ -14,11 +25,19 @@ header .mobile {
   display: var(--mobile-navbar-visibility);
 }
 
-.nav-bar {
+.desktop .nav-bar {
   display: flex;
   align-items: center;
   height: 64px;
-  background-color: orange;
+  /* background-color: orange; */
+}
+
+.mobile .nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 64px;
+  /* background-color: orange; */
 }
 
 .logo {
@@ -46,12 +65,12 @@ header .mobile {
 
 .right-menu li a {
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
 /* SECTION 2 */
 .sec2-banner-container {
-  background-color: #dbdbdb;
+  background-color: var(--color-gray-theme);
   display: flex;
   flex-direction: column;
 }
@@ -64,7 +83,7 @@ header .mobile {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: greenyellow;
+  /* background-color: greenyellow; */
   width: 100%;
   padding: 2rem 1rem;
 }
@@ -77,18 +96,21 @@ header .mobile {
 
 .banner-text a {
   padding: 8px 0;
-  background-color: #9b9b9b;
+  background-color: var(--color-darkgray-theme);
   text-align: center;
   color: white;
   text-decoration: none;
   margin-top: 1.5rem;
 }
+.banner-text p {
+    line-height: 1.5rem;
+}
 
 /* SECTION 3 */
-.sec3-info-container {
+/* .sec3-info-container {
   background-color: beige;
-  /* margin-bottom: 32px; */
-}
+  margin-bottom: 32px;
+} */
 
 .info-item {
   display: flex;
@@ -103,7 +125,7 @@ header .mobile {
 
 .info-item a {
   text-decoration: none;
-  color: #8fc9f9;
+  color: var(--color-blue-theme);
   margin-left: 32px;
   /* margin-bottom: 64px; */
 }
@@ -116,6 +138,10 @@ header .mobile {
   margin-left: 32px;
   font-size: 1.25rem;
   font-weight: bold;
+}
+
+.info-right-cont .info-item:last-child {
+    background-color: none;
 }
 
 .info-item .desktop {
@@ -134,7 +160,6 @@ header .mobile {
 
 /* Section 4 */
 .sec4-courses-container {
-  /* background-color: rgb(245, 245, 245); */
   padding: 32px 16px;
 }
 
@@ -145,14 +170,20 @@ header .mobile {
   font-size: 32px;
 }
 
-.courses-row {
+/* .courses-row {
   display: flex;
   flex-direction: column;
+} */
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 8px;
 }
 
 .course {
-  flex-basis: 33%;
-  margin: 0.25rem 0;
+  /* flex-basis: 33%; */
+  /* margin: 0.25rem 0; */
   background-color: white;
   text-decoration: none;
   color: inherit;
@@ -168,16 +199,15 @@ header .mobile {
 }
 
 .course .text-content {
-  background-color: #d8d8d8;
+  background-color: var(--color-gray-theme);
   padding: 16px 16px 24px 16px;
 }
 
-.course h4 {
+.course .text-content h4 {
   display: none;
-  padding-bottom: 8px;
 }
 
-.course p {
+.course .text-content p {
   display: none;
 }
 /* END OF SECTION 4 */
@@ -203,7 +233,7 @@ header .mobile {
     width: 100%;
     padding: 0;
     margin-right: 0;
-    border-right: 1px solid #f5f5f5;
+    border-right: 1px solid var(--color-border);
 }
 
 .main-content .media-container {
@@ -226,7 +256,19 @@ header .mobile {
     display: none;
 }
 
+/* SECTION FOOTER */
+
+.footer {
+    padding: 16px 0 16px 24px;
+}
+
+.footer ul {
+    display: none;
+}
+
+/********************************/
 /* Media Responsive for Desktop */
+/********************************/
 @media (min-width: 895px) {
   .info-item .desktop {
     --desktop-info-img-visibility: ;
@@ -259,9 +301,10 @@ header .mobile {
 
   .info-left-cont {
     display: block;
-    background-color: yellow;
+    /* background-color: yellow; */
     width: 60%;
-    padding: 24px 32px;
+    padding: 32px 24px;
+    border-right: 1px solid var(--color-border)
   }
 
   .info-left-cont img {
@@ -275,14 +318,24 @@ header .mobile {
     font-weight: bold;
   }
 
+  .info-right-cont .info-item:last-child {
+    background-color:  var(--color-gray-theme);
+}
+
   .info-right-cont {
     width: 40%;
+  }
+
+  .info-right-cont .info-item .text h4,
+  .info-right-cont .info-item .text p,
+  .info-right-cont .info-item .text a {
+    margin-left: 0;
   }
 
   /* SECTION 5 */
   .sec5-thesis-container {
     padding-bottom: 32px;
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 1px solid var(--color-border);
   }
   
   .sec5-thesis-container h2 {
@@ -313,13 +366,12 @@ header .mobile {
     display: flex;
     flex-direction: column;
     width: 40%;
-    /* padding: 32px 0; */
 }
 
 .supporting-content .content-image-box {
     display: flex;
     padding: 16px;
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 1px solid var(--color-border);
 }
 
 .content-image-box .media-container {
@@ -345,7 +397,7 @@ header .mobile {
 
 
 .supporting-content .content-image-box:first-child {
-   background-color:#d8d8d8;
+   background-color: var(--color-gray-theme);
 }
 
 }
@@ -368,37 +420,62 @@ header .mobile {
 
   .sec4-courses-container {
     background-color: rgb(245, 245, 245);
-    padding: 32px 56px;
+    padding: 32px 72px;
   }
 
-  .courses-row {
+  .sec4-courses-container h2 {
+    padding-bottom: 32px;
+  }
+
+  /* .courses-row {
     flex-direction: row;
-  }
+  } */
 
-  .course {
-    margin: 1rem;
-  }
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 32px;
+    }
 
   .course .text-content {
     background-color: white;
   }
 
   .course .media-container {
-    display: unset;
-  }
-
-  .course h3 {
-    padding-bottom: 8px;
-  }
-
-  .course h4 {
     display: block;
-    /* padding-bottom: 8px; */
   }
 
-  .course p {
-    display: unset;
+  .course .text-content h3 {
+    padding-bottom: 8px;
+    font-weight: 800;
   }
+
+  .course .text-content h4 {
+    display: block;
+    padding-bottom: 8px;
+    font-weight: 100;
+  }
+
+  .course .text-content p {
+    display: block;
+  }
+
+  .footer {
+      display: flex;
+  }
+  .footer p {
+    flex:1;
+}
+
+.footer ul {
+    display: block;
+}
+
+.footer ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 8px;
+}
 }
 
 @media (min-width: 550px) {
