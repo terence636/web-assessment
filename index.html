@@ -4,229 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" type="text/css">
     <title>Colmar Academy</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      header .desktop {
-        --desktop-navbar-visibility: none;
-        display: var(--desktop-navbar-visibility);
-      }
-
-      header .mobile {
-        --mobile-navbar-visibility: ;
-        display: var(--mobile-navbar-visibility);
-      }
-
-      .nav-bar {
-        display: flex;
-        align-items: center;
-        height: 64px;
-        background-color: orange;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        margin: 24px;
-        height: 32px;
-        /* flex-grow: 1; */
-      }
-
-      .right-menu {
-        /* margin-right: 24px; */
-        list-style: none;
-        position: absolute;
-        right: 24px;
-        /* float: right; */
-      }
-
-      .right-menu li {
-        display: inline-block;
-        line-height: 64px;
-        margin-right: 16px;
-        text-decoration: none;
-      }
-
-      .right-menu li a {
-        text-decoration: none;
-        color: black;
-      }
-
-      /* SECTION 2 */
-      .sec2-banner-container {
-        background-color: #dbdbdb;
-        display: flex;
-        flex-direction: column;
-      }
-
-      /* .banner-img {
-        width: 100%;
-      } */
-
-      .banner-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-color: greenyellow;
-        width: 100%;
-        padding: 2rem 1rem;
-      }
-
-      .banner-text h1 {
-        margin-bottom: 2rem;
-        font-weight: bold;
-        font-size: 2rem;
-      }
-
-      .banner-text a {
-        padding: 8px 0;
-        background-color: #9b9b9b;
-        text-align: center;
-        color: white;
-        text-decoration: none;
-        margin-top: 1.5rem;
-      }
-
-      /* SECTION 3 */
-      .sec3-info-container {
-        background-color: beige;
-        /* margin-bottom: 32px; */
-      }
-
-      .info-item {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 64px;
-      }
-
-      .info-item img {
-        padding: 16px;
-        width: 100%;
-      }
-
-      .info-item a {
-        text-decoration: none;
-        color: #8fc9f9;
-        margin-left: 32px;
-        /* margin-bottom: 64px; */
-      }
-
-      .info-item p {
-        margin: 8px 32px;
-      }
-
-      .info-item h4 {
-        margin-left: 32px;
-        font-size: 1.25rem;
-        font-weight: bold;
-      }
-
-      .info-item .desktop {
-        --desktop-info-img-visibility: none;
-        display: var(--desktop-info-img-visibility);
-      }
-
-      .info-item .mobile {
-        --mobile-info-img-visibility: ;
-        display: var(--mobile-info-img-visibility);
-      }
-
-      .info-left-cont {
-        display: none;
-      }
-
-      /* Media Responsive for Desktop */
-      @media (min-width: 895px) {
-        .info-item .desktop {
-          --desktop-info-img-visibility: ;
-        }
-        .info-item .mobile {
-          --mobile-info-img-visibility: none;
-        }
-
-        .sec3-info-container {
-          display: flex;
-        }
-
-        .info-item {
-        flex-direction: row;
-        margin-bottom: 0;
-        /* margin-bottom: 64px; */
-            /* padding: 16px; */
-        }
-
-        .info-item img {
-            width: 35%;
-            height: auto;
-            
-        }
-
-        .info-item .text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            /* align-items: center; */
-            /* border: 1px solid; */
-        }
-
-        /* .info-item .text p {
-            margin: 8px 0;
-        } */
-
-        .info-left-cont {
-          display: block;
-          background-color: yellow;
-          width: 60%;
-          padding: 24px 32px;
-        }
-
-        .info-left-cont img {
-          width: 100%;
-        }
-
-        .info-left-cont h3 {
-            padding-top: 32px;
-            padding-bottom: 24px;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .info-right-cont {
-          width: 40%;
-        }
-      }
-
-      @media (min-width: 770px) {
-        .sec2-banner-container {
-          flex-direction: row;
-          padding: 32px 24px;
-        }
-
-        .banner-img {
-          width: 60%;
-          margin-right: 24px;
-          /* margin: 32px 24px; */
-        }
-
-        .banner-text {
-          width: 40%;
-        }
-      }
-
-      @media (min-width: 550px) {
-        header .desktop {
-          --desktop-navbar-visibility: ;
-        }
-        header .mobile {
-          --mobile-navbar-visibility: none;
-        }
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -324,7 +103,108 @@
       </div>
     </div>
     <div class="sec4-courses-container">
-
+      <h2>Start learning</h2>
+      <div class="courses-row">
+          <a href="#" class="course">
+            <div class="media-container">
+              <img src="capstone_colmar_assets/images/course-software.jpg">
+            </div>
+            <div class="text-content">
+              <h3>Software engineering</h3>
+              <h4>COURSES</h4>
+              <p>Web Development, Mobile Development, iOT, APIs</p>
+            </div>
+          </a>
+          <a href="#" class="course">
+            <div class="media-container">
+              <img src="capstone_colmar_assets/images/course-computer-art.jpg">
+            </div>
+            <div class="text-content">
+              <h3>Computer art</h3>
+              <h4>COURSES</h4>
+              <p>Imaging &amp; Design, Web Design, Motion Graphics &amp; Visual Effects, Computer Animation</p>
+            </div>
+          </a>
+          <a href="#" class="course">
+            <div class="media-container">
+              <img src="capstone_colmar_assets/images/course-design.jpg">
+            </div>
+            <div class="text-content">
+              <h3>Design</h3>
+              <h4>COURSES</h4>
+              <p>User Experience Design, User Research, Visual Design</p>
+            </div>
+          </a>
+       </div>
+       <div class="courses-row">
+        <a href="#" class="course">
+          <div class="media-container">
+            <img src="capstone_colmar_assets/images/course-data.jpg">
+          </div>
+          <div class="text-content">
+            <h3>Data</h3>
+            <h4>COURSES</h4>
+            <p>Data Science, Big Data, SQL, Data Visualization</p>
+          </div>
+        </a>
+        <a href="#" class="course">
+          <div class="media-container">
+            <img src="capstone_colmar_assets/images/course-business.jpg">
+          </div>
+          <div class="text-content">
+            <h3>Business</h3>
+            <h4>COURSES</h4>
+            <p>Product Development, Business Development, Startup</p>
+          </div>
+        </a>
+        <a href="#" class="course">
+          <div class="media-container">
+            <img src="capstone_colmar_assets/images/course-marketing.jpg">
+          </div>
+          <div class="text-content">
+            <h3>Marketing</h3>
+            <h4>COURSES</h4>
+            <p>Analytics, Content Marketing, Mobile Marketing</p>
+          </div>
+        </a>
+      </div>
+      </div>
+    <div class="sec5-thesis-container">
+      <h2>Thesis exhibits</h2>
+      <div class="all-thesis-content">
+        <div class="main-content">
+          <div class="media-container">
+            <video src="capstone_colmar_assets/videos/thesis.mp4" controls="">
+              Video could not be loaded.
+            </video>
+          </div>
+          <h3>Reimagine urban transportation</h3>
+          <p>
+            "Curabitur vitae libero in ipsum portitor consequat. Aliquam et commodo lectus, nec consequat neque. Sed non accumsan urna. Phasellus sed consequat ex. Etiam eget magna laoreet, effcitur dolor consequat, tristque ligula."
+          </p>
+        </div>
+        <div class="supporting-content">
+          <div class="content-image-box">
+            <div class="media-container">
+              <img src="capstone_colmar_assets/images/thesis-fisma.jpg">
+            </div>
+            <div class="text-content">
+              <h4>Fisma: Design and Prototype</h4>
+              <p>Designer showcase of new prototype product</p>
+            </div>
+          </div>
+          <div class="content-image-box">
+            <div class="media-container">
+              <img src="capstone_colmar_assets/images/thesis-now-and-then.jpg">
+            </div>
+            <div class="text-content">
+              <h4>Now and then</h4>
+              <p>Research study about New York</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   </body>
 </html>
